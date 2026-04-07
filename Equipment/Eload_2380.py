@@ -46,4 +46,7 @@ class Eload_2380(object):
         self.load.write('OUTP ON')
         result = self.load.query('OUTP?')
 
-
+    def step_current(start, stop, transition_time):
+        self.load.write(':CURR ' + start + ' ,')
+        self.load.write(':CURR ' + stop + ' ,')
+        self.load.write(f':TRANS:TIME {transition_time}')
