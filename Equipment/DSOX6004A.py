@@ -79,3 +79,15 @@ class DSOX6004A(object):
 
     def set_single(self):
         self.inst.write(":SINGLE")
+
+    def set_timebase(self, time_base):
+        self.inst.write(f":TIMebase:RANGe {time_base}")
+
+    def set_probe(self, channel, probe):
+        self.inst.write(f":CHANnel{channel}:PROBe {probe}")
+
+    def set_coupling(self, coupling):
+        self.inst.write(f":TRIGger[:EDGE]:COUPling {coupling}")
+
+    def set_trigger(self, edge):
+        self.inst.write(f":TRIGger:OR {edge}")
